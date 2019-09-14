@@ -2,6 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
@@ -29,7 +33,12 @@
                     <input type="text" name="task" id="task" />
                     <label for="task">New Task</label>
                   </div>
-                  <input type="submit" value="Add Task" class="btn" />
+                  <input
+                    id="btnAddTask"
+                    type="submit"
+                    value="Add Task"
+                    class="btn"
+                  />
                 </form>
               </div>
             </div>
@@ -39,7 +48,14 @@
                 <input type="text" name="filter" id="filter" />
                 <label for="filter">Filter Tasks</label>
               </div>
-              <ul class="collection"></ul>
+              <ul class="collection" id="taskList">
+                <li class="collection-item">
+                  Alvin
+                  <a href="#" class="delete-item secondary-content">
+                    <i class="material-icons">delete</i>
+                  </a>
+                </li>
+              </ul>
               <a href="#" class="clear-tasks btn black">Clear Tasks</a>
             </div>
           </div>
@@ -53,6 +69,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="TaskManager.js"></script>
+    <script src="js/AddPerson.js"></script>
   </body>
 </html>
