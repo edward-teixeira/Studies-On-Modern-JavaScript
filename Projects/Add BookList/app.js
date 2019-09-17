@@ -41,26 +41,20 @@ UI.prototype.showAlert = function(message, className) {
   }, 2000);
 };
 
-UI.prototype.showSuccess = function(message, className) {
-  const div = document.createElement("div");
-  div.className = `alert ${className}`;
-  div.appendChild(document.createTextNode(message));
-  const container = document.querySelector(".container");
-  container.insertAdjacentElement("afterbegin", div);
-
-  setTimeout(function() {
-    document.querySelector(".success").remove();
-  }, 2000);
-};
 // Clear Field
 UI.prototype.clearFields = function() {
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
   document.getElementById("isbn").value = "";
 };
+// Delete method
+UI.prototype.deleteBook = function(classname) {
+  const link = document.querySelector(classname);
+  link.parentElement.parentElement.remove();
+};
 //Event Listeners
 document.getElementById("book-form").addEventListener("submit", function(e) {
-  console.log("tapped");
+  //console.log("tapped");
 
   //Get form Values
   const title = document.getElementById("title").value,
@@ -79,9 +73,19 @@ document.getElementById("book-form").addEventListener("submit", function(e) {
   } else {
     // Add book to list
     ui.addBookToList(book);
-    ui.showSuccess("Thanks for adding a book", "success");
+    ui.showAlert("Thanks for adding a book", "success");
     //console.log();
     ui.clearFields();
+  }
+  e.preventDefault();
+});
+
+// Event Listener for delete
+document.querySelector("#book-list").addEventListener("click", function(e) {
+  if (e.target.className === "delete") {
+    let ui = new UI();
+    ui.deleteBook(".delete");
+    ui.showAlert("Book removed", "success");
   }
   e.preventDefault();
 });
