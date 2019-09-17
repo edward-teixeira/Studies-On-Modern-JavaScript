@@ -36,11 +36,4 @@ mary.getMarried("Smith"); // Mary Smith
 console.log(mary.hasOwnProperty("surname")); // True
 console.log(mary.hasOwnProperty("fakeProperty")); // False */
 
-var Animal = {
-  tipo: "Invertebrado",
-  qualTipo: function() {
-    console.log(this.tipo);
-  }
-};
-let animal1 = Object.create(Animal);
-console.log(animal1.qualTipo());
+
