@@ -17,7 +17,6 @@ UI.prototype.addBookToList = function(book) {
     <td>${book.title}</td> 
         <td>${book.author}</td> 
             <td>${book.isbn}</td> 
-                <td>${book.title}</td> 
                 <td><a href="#" class="delete" style="color: red;">X<a></td>
   `;
   list.appendChild(row);
