@@ -1,4 +1,4 @@
-const http = new EzHTTP();
+/* const http = new EzHTTP();
 
 const data = {
   name: "Johnny Cash",
@@ -35,7 +35,7 @@ http
 http
   .put("http://jsonplaceholder.typicode.com/posts/1", data)
   .then(res => console.log(res))
-  .catch();
+  .catch(); */
 
 /* async function myFunc() {
   const promise = new Promise((resolve, reject) => {
@@ -64,20 +64,45 @@ myFunc()
 
   // only proceed once second promise is resolved
   return data;
-}
+} */
 
 //*Examples below:
 //fetchFromGitHub().then(response => console.log(response[0].login));
-getChuckNorrisJokes();
+/* const chuckJokes = Promise.resolve(getChuckNorrisJokes());
+const gitData = Promise.resolve(fetchFromGitHub());
+
+Promise.all([chuckJokes, gitData]).then(values => {
+  values[0].value.forEach(element => {
+    const para = document.createElement("p");
+    para.textContent = element.joke;
+    document.querySelector("body").append(para);
+  });
+  const para = document.createElement("p");
+  para.textContent = values[1];
+  document.querySelector("body").append(para);
+  console.log(gitData.user);
+});
 
 async function fetchFromGitHub() {
   return await fetch("https://api.github.com/users")
-    .then(response => response.json())
-
-    .catch(err => console.log(err));
+    .then(response => {
+      return response.json();
+    })
+    .catch(err => err);
 }
 
 function getChuckNorrisJokes() {
+  return new Promise((resolve, reject) => {
+    fetch("https://api.icndb.com/jokes/random/1")
+      .then(response => {
+        return response.json();
+      })
+
+      .catch();
+  });
+} */
+
+/* function getChuckNorrisJokes() {
   return new Promise((resolve, reject) => {
     fetch("https://api.icndb.com/jokes/random/1")
       .then(response => {
