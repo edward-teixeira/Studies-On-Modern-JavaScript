@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+
+    <script>
+      //A promise initial state is "pending";
+      let promise = fetch("https://source.unsplash.com/random")
+        //The code below is executed after the promise retrieved with success
+        .then(myBlob => {
+          let image = document.createElement("img");
+          image.src = myBlob.url;
+          document.body.appendChild(image);
+        })
+        .catch(e => {
+          console.log(
+            /*
+          .catch() block at all, but think about it — this allows us to control error handling exactly how we want.
+           In a real app, your .catch() block could retry fetching the image, or show a default image,
+           or prompt the user to provide a different image URL, or whatever.
+          */
+            "There has been a problem with your fetch operation: " + e.message
+          );
+        });
+
+      // the callback function inside the then() is only executed once and after the fetch.
+      /*
+      To respond to the successful completion of the operation whenever that occurs (in this case, when a Response is returned),
+       we invoke the .then() method of the promise object.
+
+       The callback inside the .then() block (referred to as the executor) runs only when the promise call
+       completes successfully and returns the Response object — in promise-speak, when it has been fulfilled.
+       It is passed the returned Response object as a parameter.
+       */
+    </script>
+  </body>
+</html>

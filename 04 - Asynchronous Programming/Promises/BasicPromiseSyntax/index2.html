@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>My test page</title>
+  </head>
+  <body>
+    <p>This is my page</p>
+
+    <script>
+      function fetchAndDecode(url, type) {
+        return fetch(url)
+          .then(response => {
+            if (type === "blob") {
+              return response.blob();
+            } else if (type === "text") {
+              return response.text();
+            }
+          })
+          .catch(e => {
+            console.log(
+              "There has been a problem with your fetch operation: " + e.message
+            );
+          })
+          .finally(() => {
+            console.log(`The fetch for ${url} succeeded! `);
+          });
+      }
+      let coffee = fetchAndDecode("coffee.jpg", "blob");
+      let tea = fetchAndDecode("tea.jpg", "blob");
+      let description = fetchAndDecode("description.txt", "text");
+      //define a Promise.all() block to run some code only when all three of the promises stored above have successfully fulfilled.
+      Promise.all([coffee, tea, description]).then(values => {
+        console.log(values);
+        // Store each value returned from the promises in separate variables; create object URLs from the blobs
+        values.forEach(value => {
+          // Display the images in <img> elements
+          if (value.type === "image/jpeg") {
+            let image = document.createElement("img");
+            image.src = URL.createObjectURL(value);
+            document.body.insertAdjacentElement("beforeend", image);
+          } else {
+            // Display the text in a paragraph
+            let para = document.createElement("p");
+            para.textContent = `${value.toString()}`;
+            document.body.appendChild(para);
+          }
+        });
+      });
+
+      /* 1 - First of all we define the function, passing it a URL and a string representing the type of resource it is fetching.
+          2 - Inside the function body, we have a similar structure to what we saw in the first example — we call the fetch() 
+          function to fetch the resource at the specified URL, then chain it onto another promise that returns the decoded (or "read") 
+          response body. This was always the blob() method in the previous example.
+
+
+      */
+    </script>
+  </body>
+</html>

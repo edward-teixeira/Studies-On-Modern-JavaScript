@@ -49,7 +49,7 @@ class EzHTTP {
         method: "DELETE",
         headers: { "Content-type": "application/json" }
       })
-        .then(res => "Smooth")
+        .then(res => res.json())
         .then(() => resolve("Resource Deleted"))
         .catch(err => reject(err));
     });
