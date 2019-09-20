@@ -15,12 +15,12 @@ class EzHTTP {
         .catch(err => reject(err));
     });
   }
-  //Make an HTTP post Request
+//Make an HTTP post Request
   post(url, data) {
     return new Promise((resolve, reject) => {
       fetch(url, {
         method: "POST",
-        headers: { "Content-type": "application/json" },
+        headers: { "Content-type": "application/json" }, //O tipo do corpo da solicitação é indicado pelo cabeçalho
         body: JSON.stringify(data)
       })
         .then(res => res.json())

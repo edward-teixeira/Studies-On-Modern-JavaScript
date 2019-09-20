@@ -1,11 +1,11 @@
 const http = new EasyHTTP();
 //get Users
-/* http
+http
   .get("http://jsonplaceholder.typicode.com/posts")
   .then(data => data)
   .catch();
 
-console.log(user); */
+console.log(user);
 
 //USer Data
 const data = {
