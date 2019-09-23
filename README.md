@@ -12,6 +12,7 @@ This repository is dedicated to keeptrack of my studies, with lectures notes, co
 - [Alura JavaScript](https://www.alura.com.br/cursos-online-front-end/javascript);
 - [Node.js, Express & MongoDB Dev to Deployment ](https://www.udemy.com/nodejs-express-mongodb-dev-to-deployment/?couponCode=TRAVERSYMEDIA)
 - [ES6 For Everyone](https://es6.io/);
+- [General JavaScript Concepts](https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q);
 
 **Obs:** _More resources will be added along the way._
 
