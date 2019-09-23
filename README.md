@@ -71,7 +71,7 @@ This repository is dedicated to keeptrack of my studies, with lectures notes, co
     - Quantifiers;
     - Conditionals;
 
-**- [ ] ES5 features:**
+**- [x] ES5 features:**
 
 - Iterators;
 - Profile Scroller;
