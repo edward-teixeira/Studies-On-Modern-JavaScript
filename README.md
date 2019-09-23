@@ -100,7 +100,7 @@ This repository is dedicated to keeptrack of my studies, with lectures notes, co
 - Advanced Classes, Proxies;- Generators, Sets and Maps;
 - How to write clean and consistent JavaScript with ESLint;
 - Proper tooling + bundling setup with Webpack;
-- So much more — Check below for a full listing of videos;
+
 
 ---
 
