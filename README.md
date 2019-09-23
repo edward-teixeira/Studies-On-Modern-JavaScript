@@ -81,7 +81,7 @@ This repository is dedicated to keeptrack of my studies, with lectures notes, co
 - ES6 Maps;
 - Es6 Sets;
 
-**- [ ] JavaScript Patterns:**
+**- [x] JavaScript Design Patterns:**
 
 - What Are Patterns;
 - Module Revealing Pattern;
