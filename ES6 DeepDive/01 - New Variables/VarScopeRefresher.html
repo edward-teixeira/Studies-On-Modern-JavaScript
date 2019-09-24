@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Let and Const</title>
+  </head>
+  <body>
+    <head>
+      <h1>Let and Const</h1>
+    </head>
+    <script>
+      //var can be reasigned
+      //var variables are function scoped: They are only avalaibe inside the function they
+      //were created or if they are not created in a function at all, they are globally scoped and
+      //avalaibe in the window.
+
+      var width;
+      function setWidth() {
+        width = 200;
+        console.log(width);
+      }
+      setWidth();
+
+      var age = 100;
+
+      //Let and Const are function scoped;
+      // Behaves like normal languages variables
+      if (age > 12) {
+        let dogYear = age * 7;
+        console.log(`You are ${dogYear} dog years old!`);
+      }
+
+      console.log(width);
+      console.log(width);
+    </script>
+  </body>
+</html>

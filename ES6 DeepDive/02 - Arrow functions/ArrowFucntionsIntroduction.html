@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Arrow Functions Introduction</title>
+  </head>
+  <body>
+    <script>
+      const name = ["johnny", "lux", "kait"];
+
+      const fullNames = names.map(function(name) {
+        return `${name} bos`;
+        // johnny bos, lux bos, kait bos
+      });
+
+      //Same function as above but in arrow function
+
+      const fullNames2 = names.map(name => {
+        return `${name} bos`;
+        // johnny bos, lux bos, kait bos
+      });
+
+      // Implicit return
+      const fullNames2 = names.map(
+        name => `${name} bos`
+
+        // johnny bos, lux bos, kait bos
+        //the lack of curly braces means an implicit return
+      );
+    </script>
+  </body>
+</html>
