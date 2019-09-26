@@ -91,7 +91,7 @@ This repository is dedicated to keeptrack of my studies, with lectures notes, co
 - Mediator Pattern;
 - State Pattern;
 
-**- [ ] Deep Dive into ES6 features:**
+**- [x] Deep Dive into ES6 features:**
 
 - Arrow Functions and Destructuring;
 - New Iterables and Looping over data
