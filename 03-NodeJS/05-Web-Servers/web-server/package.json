@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.16.4",
+    "hbs": "^4.0.5",
     "jshint": "^2.10.2",
     "nodemon": "^1.19.3"
   }
