@@ -11,6 +11,7 @@ This repository is dedicated to keeptrack of my studies, with lectures notes, co
 - [Mozilla MDN Docs](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web);
 - [Alura JavaScript](https://www.alura.com.br/cursos-online-front-end/javascript);
 - [Node.js, Express & MongoDB Dev to Deployment ](https://www.udemy.com/nodejs-express-mongodb-dev-to-deployment/?couponCode=TRAVERSYMEDIA)
+- [The Complete Node.js Developer Course (3rd Edition)](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)
 - [ES6 For Everyone](https://es6.io/);
 - [General JavaScript Concepts](https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q);
 
