@@ -2,7 +2,7 @@
 
 # Modern JavaScript notes, projects and resources
 
-This repository is dedicated to keeptrack of my studies, with lectures notes, code sandboxes and learning projects/assignments.
+This repository is dedicated to keeptrack of my studies, with lectures notes, code sandboxes and learning projects/assignments/tutorials.
 
 ## Main resources used:
 
