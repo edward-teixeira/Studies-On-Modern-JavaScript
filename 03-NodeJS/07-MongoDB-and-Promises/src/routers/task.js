@@ -70,11 +70,14 @@ router.patch('/tasks/:id', async (request, response) => {
     return response.status(404).send({ error: "Invalid updates" });
 
   try {
-    const doc = await Task.findByIdAndUpdate(request.params.id, request.body, { runValidators: true, new: true })
-    if (!doc)
+    const task = await Task.findById(request.params.id);
+
+    if (!task)
       return response.status(404).send();
 
-    response.send(doc)
+    fields.forEach(field => task[field] = request.body[field]);
+    await task.save();
+    response.send(task)
   } catch (e) {
     response.status(404).send(e);
   }
