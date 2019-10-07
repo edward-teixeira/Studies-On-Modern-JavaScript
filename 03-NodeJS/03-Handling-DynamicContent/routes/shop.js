@@ -2,11 +2,15 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const rootDir = require('../util/path');
-const myPath = (path.join(__dirname, '../','views','shop.html'));
+const adminData = require('./admin');
 
 router.get('/', (req, res, next) => {
-   res.sendFile(path.join(rootDir,'views','shop.html' )); 
-    //Send allows us to send a response
+    const products = adminData.products;
+    //Pass the array to the template so we can access it
+   res.render('shop', {
+       prods: products,
+       docTitle: 'Shop',
+   }); 
+   //Send allows us to send a response
 });
-
 module.exports = router;
