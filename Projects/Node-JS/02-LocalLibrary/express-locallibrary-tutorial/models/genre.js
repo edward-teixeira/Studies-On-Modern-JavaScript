@@ -8,8 +8,8 @@ const GenreSchema = new Schema({
 //Genre virtual URL
 GenreSchema
   .virtual('url')
-  .get(() => {
-    return '/catalog/genre' + this.name
+  .get(function (){
+    return '/catalog/genre/' + this._id;
   });
   module.exports = mongoose.model('Genre', GenreSchema);
 
