@@ -14,6 +14,7 @@ router.get('/register', forwardAuthenticated, (req, res) => res.render('register
 
 // Register
 router.post('/register', (req, res) => {
+  //*Validation of inputs
   const { name, email, password, password2 } = req.body;
   let errors = [];
 
@@ -37,6 +38,7 @@ router.post('/register', (req, res) => {
       password,
       password2
     });
+    //*If pass, then check if the user already exists
   } else {
     User.findOne({ email: email }).then(user => {
       if (user) {
@@ -48,13 +50,14 @@ router.post('/register', (req, res) => {
           password,
           password2
         });
+        //* if not, create a new user
       } else {
         const newUser = new User({
           name,
           email,
           password
         });
-
+        //*Encrypt the password
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
@@ -62,6 +65,7 @@ router.post('/register', (req, res) => {
             newUser
               .save()
               .then(user => {
+                //*Show a success message and redirect to the login page
                 req.flash(
                   'success_msg',
                   'You are now registered and can log in'
@@ -76,7 +80,7 @@ router.post('/register', (req, res) => {
   }
 });
 
-// Login
+// Login Handle
 router.post('/login', (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/dashboard',
